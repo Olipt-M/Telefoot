@@ -1,0 +1,16 @@
+# Composer directory and files
+vendor
+composer.json
+composer.lock
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
