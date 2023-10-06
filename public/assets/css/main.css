@@ -299,12 +299,12 @@ form label {
   outline: none;
 }
 
-#inputFirstname, #inputEmail, #inputPassword {
+#inputSubscriptionFirstname, #inputSubscriptionEmail, #inputSubscriptionPassword {
   border-left: 1px solid #f4f4f6;
   border-bottom: 1px solid #f4f4f6;
 }
 
-#inputLastname, #inputRetypedEmail, #inputRetypedPassword {
+#inputSubscriptionLastname, #inputSubscriptionRetypedEmail, #inputSubscriptionRetypedPassword {
   border-right: 1px solid #f4f4f6;
   border-bottom: 1px solid #f4f4f6;
 }
@@ -319,6 +319,7 @@ form p {
 }
 
 .submit-btn {
+  margin-top: 2rem;
   color: #191a20;
   text-decoration: none;
   padding: 1rem;
@@ -333,5 +334,48 @@ form p {
 .submit-btn:hover {
   background: #cc9027;
 }
+
+#inputLoginEmail {
+  border-inline: 1px solid #cc9f53;
+  border-top: 1px solid #cc9f53;
+}
+
+#inputLoginPassword {
+  border-inline: 1px solid #cc9f53;
+  border-bottom: 1px solid #cc9f53;
+}
+
+.form-secondary {
+  width: 100%;
+}
+
+.login-other-actions {
+  width: 50%;
+  margin: auto;
+}
+
+.btn-forgot-password {
+  text-decoration: none;
+  color: #f4f4f6;
+  display: block;
+  padding: 1rem;
+  width: 50%;
+  font-size: 1.4rem;
+  margin: auto;
+}
+
+.text-secondary {
+  padding: 1rem;
+  margin: 0 auto;
+  width: 50%;
+  font-size: 1.4rem;
+}
+
+.btn-login-subscription {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
+
 
 /*# sourceMappingURL=main.css.map */

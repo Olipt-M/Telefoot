@@ -3,3 +3,4 @@ RewriteEngine on
 RewriteRule ^home$ index.php
 RewriteRule ^subscription$ index.php?page=subscription
 RewriteRule ^login$ index.php?page=login
+RewriteRule ^reset_password$ index.php?page=reset_password

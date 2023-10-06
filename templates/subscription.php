@@ -8,8 +8,8 @@
     <form action="" method="post">
       <div class="form-name">
         <div class="form-group">
-          <label for="inputFirstname">Prénom *</label>
-          <input type="text" name="firstname" id="inputFirstname" value="<?= isset($data["firstname"]) ? $data["firstname"] : "" ?>">
+          <label for="inputSubscriptionFirstname">Prénom *</label>
+          <input type="text" name="firstname" id="inputSubscriptionFirstname" value="<?= isset($data["firstname"]) ? $data["firstname"] : "" ?>">
 
           <?php if (isset($errors["firstname"])) { ?>
             <p class="error"><?= $errors["firstname"] ?></p>
@@ -17,8 +17,8 @@
         </div>
 
         <div class="form-group">
-          <label for="inputLastname">Nom de famille *</label>
-          <input type="text" name="lastname" id="inputLastname" value="<?= isset($data["lastname"]) ? $data["lastname"] : "" ?>">
+          <label for="inputSubscriptionLastname">Nom de famille *</label>
+          <input type="text" name="lastname" id="inputSubscriptionLastname" value="<?= isset($data["lastname"]) ? $data["lastname"] : "" ?>">
 
           <?php if (isset($errors["lastname"])) { ?>
             <p class="error"><?= $errors["lastname"] ?></p>
@@ -28,8 +28,8 @@
 
       <div class="form-email">
         <div class="form-group">
-          <label for="inputEmail">Email *</label>
-          <input type="email" name="email" id="inputEmail" value="<?= isset($data["email"]) ? $data["email"] : "" ?>">
+          <label for="inputSubscriptionEmail">Email *</label>
+          <input type="email" name="email" id="inputSubscriptionEmail" value="<?= isset($data["email"]) ? $data["email"] : "" ?>">
 
           <?php if (isset($errors["email"])) { ?>
             <p class="error"><?= $errors["email"] ?></p>
@@ -37,8 +37,8 @@
         </div>
 
         <div class="form-group">
-          <label for="inputRetypedEmail">Confirmer l'email *</label>
-          <input type="email" name="retypedEmail" id="inputRetypedEmail" value="<?= isset($data["retypedEmail"]) ? $data["retypedEmail"] : "" ?>">
+          <label for="inputSubscriptionRetypedEmail">Confirmer l'email *</label>
+          <input type="email" name="retypedEmail" id="inputSubscriptionRetypedEmail" value="<?= isset($data["retypedEmail"]) ? $data["retypedEmail"] : "" ?>">
 
           <?php if (isset($errors["retypedEmail"])) { ?>
             <p class="error"><?= $errors["retypedEmail"] ?></p>
@@ -48,8 +48,8 @@
 
       <div class="form-mdp">
         <div class="form-group">
-          <label for="inputPassword">Mot de passe *</label>
-          <input type="password" name="password" id="inputPassword" value="<?= isset($data["password"]) ? $data["password"] : "" ?>">
+          <label for="inputSubscriptionPassword">Mot de passe *</label>
+          <input type="password" name="password" id="inputSubscriptionPassword" value="<?= isset($data["password"]) ? $data["password"] : "" ?>">
 
           <?php if (isset($errors["password"])) { ?>
             <p class="error"><?= $errors["password"] ?></p>
@@ -57,8 +57,8 @@
         </div>
 
         <div class="form-group">
-          <label for="inputRetypedPassword">Confirmer le mot de passe *</label>
-          <input type="password" name="retypedPassword" id="inputRetypedPassword" value="<?= isset($data["retypedPassword"]) ? $data["retypedPassword"] : "" ?>">
+          <label for="inputSubscriptionRetypedPassword">Confirmer le mot de passe *</label>
+          <input type="password" name="retypedPassword" id="inputSubscriptionRetypedPassword" value="<?= isset($data["retypedPassword"]) ? $data["retypedPassword"] : "" ?>">
           
           <?php if (isset($errors["retypedPassword"])) { ?>
             <p class="error"><?= $errors["retypedPassword"] ?></p>
