@@ -33,6 +33,11 @@
       "model" => "UserModel",
       "view" => "UserView",
       "controller" => "UserController"
+    ),
+    "logout" => array(
+      "model" => "LogoutModel",
+      "view" => "LogoutView",
+      "controller" => "LogoutController"
     )
   );
 

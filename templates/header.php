@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,8 +25,14 @@
         </nav>
         <nav class="account-buttons">
             <ul>
-                <li><a href="subscription" class="btn-subscription">S'abonner</a></li>
-                <li><a href="login" class="btn-login">Se connecter</a></li>
+                <?php if (isset($_SESSION["user"])) { ?>
+                    <li>Bienvenue <?= $_SESSION["user"]["firstname"] ?></li>
+                    <li><a href="user" class="btn-subscription">Mes lives</a></li>
+                    <li><a href="logout" class="btn-login">Déconnexion</a></li>
+                <?php } else { ?>
+                    <li><a href="subscription" class="btn-subscription">S'abonner</a></li>
+                    <li><a href="login" class="btn-login">Se connecter</a></li>
+                <?php } ?>
             </ul>
         </nav>
     </header>

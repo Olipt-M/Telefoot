@@ -14,25 +14,24 @@ class LoginView
   {
     if (!empty($_POST)) {
       $this->controller->validateEmail();
-      $this->controller->validateRetypedEmail();
       $this->controller->validatePassword();
-      $this->controller->validateRetypedPassword();
-      $this->controller->validateFirstname();
-      $this->controller->validateLastname();
 
       if (empty($this->controller->errors)) {
-        if ($this->controller->post()) {
-          header("Location: ./?page=login");
-        }
+        session_start();
+        $users = $this->controller->getUser();
+        $_SESSION["user"]["firstname"] = $users["firstname"];
+        $_SESSION["user"]["lastname"] = $users["lastname"];
+        $_SESSION["user"]["ip"] = $_SERVER["REMOTE_ADDR"];
+
+        header('Location: user');
+
       } else {
         $errors = $this->controller->getErrors();
       }
 
-      $data = $this->controller->getFormValues();
+      $data = $this->controller->getCredentials();
     }
 
     require($this->template);
   }
 }
-
-
