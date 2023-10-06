@@ -1,13 +1,13 @@
 <?php
-class SubscriptionView
+class LoginView
 {
   public $controller;
   public $template;
 
-  public function __construct(SubscriptionController $controller)
+  public function __construct(LoginController $controller)
   {
     $this->controller = $controller;
-    $this->template = DIR_TEMPLATE . "subscription.php";
+    $this->template = DIR_TEMPLATE . "login.php";
   }
 
   public function render()
@@ -22,7 +22,7 @@ class SubscriptionView
 
       if (empty($this->controller->errors)) {
         if ($this->controller->post()) {
-          header("Location: ./login");
+          header("Location: ./?page=login");
         }
       } else {
         $errors = $this->controller->getErrors();

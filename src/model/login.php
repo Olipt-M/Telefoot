@@ -1,5 +1,5 @@
 <?php
-class SubscriptionModel
+class LoginModel
 {
   public $db;
   public $firstname;
@@ -14,7 +14,7 @@ class SubscriptionModel
     $this->db = $db;
 
     if (!empty($_POST)) {
-      $this->firstname = trim(strip_tags($_POST['firstname']));
+      $this->firstname = trim(strip_tags($_POST['name']));
       $this->lastname = trim(strip_tags($_POST['lastname']));
       $this->email = trim(strip_tags($_POST['email']));
       $this->retypedEmail = trim(strip_tags($_POST['retypedEmail']));

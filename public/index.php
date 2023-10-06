@@ -24,6 +24,11 @@
       "view" => "SubscriptionView",
       "controller" => "SubscriptionController"
     ),
+    "login" => array(
+      "model" => "LoginModel",
+      "view" => "LoginView",
+      "controller" => "LoginController"
+    ),
     "user" => array(
       "model" => "UserModel",
       "view" => "UserView",

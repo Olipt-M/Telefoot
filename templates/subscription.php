@@ -1,57 +1,4 @@
 <?php
-  // if (!empty($_POST)) {
-    // $errors = [];
-
-    // $firstname = trim(strip_tags($_POST['name']));
-    // $lastname = trim(strip_tags($_POST['lastname']));
-    // $email = trim(strip_tags($_POST['email']));
-    // $retypedEmail = trim(strip_tags($_POST['retypedEmail']));
-    // $password = trim(strip_tags($_POST['password']));
-    // $retypedPassword = trim(strip_tags($_POST['retypedPassword']));
-
-    // // Validation de l'email
-    // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //   $errors["email"] = "L'email n'est pas valide.";
-    // }
-    
-    // if ($retypedEmail != $email) {
-    //   $errors["retypedEmail"] = "Les deux emails sont différents.";
-    // }
-
-    // // Validation du mot de passe
-    // if ($password != $retypedPassword) {
-    //   $errors["retypedPassword"] = "Les deux mots de passe sont différents.";
-    // }
-
-    // // Validation de la présence d'aumoins une majuscule, une minuscule, un chiffre et un caractère spécial.
-    // $uppercase = preg_match("/[A-Z]/", $password);
-    // $lowercase = preg_match("/[a-z]/", $password);
-    // $number = preg_match("/[0-9]/", $password);
-    // $specialChar = preg_match("/[^a-zA-Z0-9]/", $password);
-
-    // if (!$uppercase || !$lowercase || !$number || !$specialChar || strlen($password) < 12) {
-    //   $errors["password"] = "Le mot de passe doit contenir au moins 12 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial.";
-    // }
-
-    // Si pas d'erreur
-    // if (empty($errors)) {
-      // Cryptage du mdp
-      // $hash = password_hash($password, PASSWORD_BCRYPT);
-
-      // $db = new PDO('mysql:host=localhost;dbname=startauth', 'root', 'root');
-      // Création du compte utilisateur dans la BDD
-      // $query = $db->prepare("INSERT INTO users (firstname, email, password) VALUES (:firstname, :email, :password)");
-      // $query->bindValue(':firstname', $firstname);
-      // $query->bindValue(':email', $email);
-      // $query->bindValue(':password', $hash);
-
-      // if ($query->execute()) {
-      //   // Rediriger vers la page de connexion
-      //   header('Location: login.php');
-      // }
-    // }
-  // }
-
   include("header.php");
 ?>
 
@@ -119,7 +66,7 @@
         </div>
       </div>
 
-      <p>* Champs obligatoires</p>
+      <p class="info-compulsory">* Champs obligatoires</p>
       <input type="submit" value="Envoyer" class="submit-btn">
     </form>
   </section>

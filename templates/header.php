@@ -15,14 +15,14 @@
         <img src="../public/assets/img/telefoot-color-bg-01.svg" alt="Telefoot - La chaine du foot" />
         <nav>
             <ul>
-                <li>Home</li>
+                <li><a href="home" class="btn-home">Home</a></li>
                 <li>Telefoot Bar</li>
             </ul>
         </nav>
         <nav class="account-buttons">
             <ul>
-                <li><a href="?page=subscription" class="btn1">S'abonner</a></li>
-                <li><a href="?page=login" class="btn2">Se connecter</a></li>
+                <li><a href="subscription" class="btn-subscription">S'abonner</a></li>
+                <li><a href="login" class="btn-login">Se connecter</a></li>
             </ul>
         </nav>
     </header>

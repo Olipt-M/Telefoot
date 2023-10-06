@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteRule ^home$ index.php
+RewriteRule ^subscription$ index.php?page=subscription
+RewriteRule ^login$ index.php?page=login
