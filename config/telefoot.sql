@@ -13,5 +13,6 @@ create table users (
 CREATE TABLE password_reset (
   id SMALLINT PRIMARY KEY AUTO_INCREMENT,
   email VARCHAR(255),
-  token VARCHAR(100)
+  token VARCHAR(100),
+  token_timestamp BIGINT
 );

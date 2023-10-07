@@ -4,7 +4,7 @@
   //     header('Location: home');
   // }
   // echo ($_SESSION["user"]["ip"] != $_SERVER["REMOTE_ADDR"]);
-  echo $_SESSION["user"]["ip"];
+  // echo $_SESSION["user"]["ip"];
   // echo $_SERVER["REMOTE_ADDR"];
 
 

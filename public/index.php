@@ -38,6 +38,16 @@
       "model" => "LogoutModel",
       "view" => "LogoutView",
       "controller" => "LogoutController"
+    ),
+    "reset_password" => array(
+      "model" => "ResetPasswordModel",
+      "view" => "ResetPasswordView",
+      "controller" => "ResetPasswordController"
+    ),
+    "new_password" => array(
+      "model" => "NewPasswordModel",
+      "view" => "NewPasswordView",
+      "controller" => "NewPasswordController"
     )
   );
 

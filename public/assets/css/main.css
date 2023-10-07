@@ -78,7 +78,7 @@ header nav ul li {
 }
 
 .btn-login:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 section {
@@ -362,6 +362,11 @@ form p {
   width: 50%;
   font-size: 1.4rem;
   margin: auto;
+  border-bottom: 1px solid #f4f4f6;
+}
+
+.btn-forgot-password:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .text-secondary {
