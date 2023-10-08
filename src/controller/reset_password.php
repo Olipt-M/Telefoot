@@ -34,9 +34,4 @@ class ResetPasswordController
   {
     return $this->token;
   }
-
-  public function getTokenTimestamp()
-  {
-    return $this->tokenTimestamp;
-  }
 }

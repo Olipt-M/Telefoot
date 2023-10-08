@@ -15,6 +15,14 @@
           <?php if (isset($errors["password"])) { ?>
             <p class="error"><?= $errors["password"] ?></p>
           <?php } ?>
+
+          <?php if (isset($errors["passwordUpdate"])) { ?>
+            <p class="error"><?= $errors["passwordUpdate"] ?></p>
+          <?php } ?>
+
+          <?php if (isset($errors["tokenExpired"])) { ?>
+            <p class="error">La durée de validité de votre lien a expirée. <a href="reset_password" class="reset-link"><?= $errors["tokenExpired"] ?></a></p>
+          <?php } ?>
         </div>
       </div>
 

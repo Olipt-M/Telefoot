@@ -8,14 +8,15 @@
   // echo $_SERVER["REMOTE_ADDR"];
 
 
-  // PROBLEME $_SESSION["user"]["ip"] EST VIDE, A CAUSE DE LA NAVIGATION PRIVEE ? IMPACT TEST SESSION HIJACKING
+  // PROBLEME $_SESSION["user"]["ip"] EST VIDE, A CAUSE DE LA NAVIGATION PRIVEE ? IMPACT TEST SESSION HIJACKING // Esct-q ue j'ai fait trop de session_start ?
 
   include("header.php");
 ?>
 
 <main>
   <section>
-    <h1>Voici vos chaînes, <?= $_SESSION["user"]["firstname"] ?></h1>
+    <h1>Vos chaînes</h1>
+    <p>Nous n'avons aucune base de données pour vous actuellement, <?= $_SESSION["user"]["firstname"] ?>, revenez un autre jour.</p>
   </section>
 </main>
 

@@ -382,5 +382,9 @@ form p {
   font-size: 1.4rem;
 }
 
+.reset-link {
+  color: #cc9f53;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=main.css.map */

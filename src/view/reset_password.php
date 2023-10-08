@@ -38,8 +38,8 @@ class ResetPasswordView
         $phpmailer->isHTML(true);
         $phpmailer->CharSet = 'UTF-8';
         $phpmailer->Subject = "Réinitialisation du mot de passe";
-        $url = HOST . "index.php?page=new_password&token={$this->controller->getToken()}&timestamp={$this->controller->getTokenTimestamp()}";
-        $phpmailer->Body = "<a href=\"{$url}\">Cliquez sur ce lien pour réinitialiser votre mot de passe</a>";
+        $url = HOST . "index.php?page=new_password&token={$this->controller->getToken()}";
+        $phpmailer->Body = "<a href=\"{$url}\">Cliquez sur ce lien pour réinitialiser votre mot de passe (valable 10 minutes)</a>";
         $phpmailer->send();
       }
     }

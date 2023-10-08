@@ -2,41 +2,65 @@
 class NewPasswordController
 {
   private $model;
-  public string $token;
-  public int $tokenTimestamp;
+  public $errors = [];
 
   public function __construct(NewPasswordModel $model)
   {
     $this->model = $model;
   }
 
-  public function postToken()
+  public function getTokenInfo()
   {
-    $this->token = bin2hex(random_bytes(50));
-    $this->tokenTimestamp = time();
+    $query = $this->model->db->prepare("SELECT * from password_reset WHERE token = :token");
+    $query->bindParam(":token", $this->model->token);
+    $query->execute();
+    return $query->fetch();
+  }
 
-    $query = $this->model->db->prepare("INSERT INTO password_reset (email, token, token_timestamp) VALUES (:email, :token, :tokenTimestamp)");
-    $query->bindParam(':email', $this->model->email);
-    $query->bindParam(":token", $this->token);
-    $query->bindParam(":tokenTimestamp", $this->tokenTimestamp);
+  public function postPassword()
+  {
+    $hash = password_hash($this->model->password, PASSWORD_DEFAULT);
+
+    $query = $this->model->db->prepare("UPDATE users SET password = :password WHERE email LIKE :email");
+    $query->bindParam(":password", $hash);
+    $query->bindParam(":email", $_SESSION["resetUser"]["email"]);
 
     if ($query->execute()) {
       return true;
     }
   }
 
-  public function getEmail()
+  public function validatePassword()
   {
-    return $this->model->email;
+    // Validation de la présence d'aumoins une majuscule, une minuscule, un chiffre et un caractère spécial.
+    $uppercase = preg_match("/[A-Z]/", $this->model->password);
+    $lowercase = preg_match("/[a-z]/", $this->model->password);
+    $number = preg_match("/[0-9]/", $this->model->password);
+    $specialChar = preg_match("/[^a-zA-Z0-9]/", $this->model->password);
+
+    if (!$uppercase || !$lowercase || !$number || !$specialChar || strlen($this->model->password) < 12) {
+      $this->errors["password"] = "Le mot de passe doit contenir au moins 12 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial.";
+    }
   }
 
-  public function getToken()
+  public function generateUdpdateError()
   {
-    return $this->token;
+    $this->errors["passwordUpdate"] = "Problème de mise à jour du mot de passe.";
   }
 
-  public function getTokenTimestamp()
+  public function generateTokenError()
   {
-    return $this->tokenTimestamp;
+    $this->errors["tokenExpired"] = "Cliquez ici pour recevoir un nouveau lien.";
+  }
+
+  public function getErrors()
+  {
+    return $this->errors;
+  }
+
+  public function deleteToken() {
+    $query = $this->model->db->prepare("DELETE FROM password_reset WHERE email LIKE :email");
+    $query->bindParam(":email", $_SESSION["resetUser"]["email"]);
+    $query->execute();
   }
 }

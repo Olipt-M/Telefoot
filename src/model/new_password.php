@@ -2,14 +2,19 @@
 class NewPasswordModel
 {
   public $db;
-  public $email;
+  public $token;
+  public $password;
 
   public function __construct(PDO $db)
   {
     $this->db = $db;
 
-    if (isset($_POST["email"])) {
-      $this->email = trim(strip_tags($_POST['email']));
+    session_start();
+    if (isset($_GET["token"]) && !isset($_SESSION["resetUser"])) {
+      $this->token = trim(strip_tags($_GET["token"]));
+    }
+    else if (isset($_POST["password"]) && isset($_SESSION["resetUser"])) {
+      $this->password = trim(strip_tags($_POST["password"]));
     }
   }
 }
