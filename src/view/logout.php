@@ -12,6 +12,8 @@ class LogoutView
 
   public function render()
   {
-    require($this->template);
+    session_start();
+    session_destroy();
+    header('Location: home');
   }
 }
