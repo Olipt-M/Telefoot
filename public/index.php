@@ -60,6 +60,8 @@
       $model = $value["model"];
       $view = $value["view"];
       $controller = $value["controller"];
+
+      break;
     }
   }
 
