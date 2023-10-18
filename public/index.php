@@ -1,12 +1,12 @@
 <?php
+  session_start();
+
+  require("../config/index.php");
+
   $page = "home";
   if (isset($_GET["page"])) {
     $page = $_GET["page"];
   }
-  // echo "Nous allons générer la page {$page}.";
-
-  // Import du fichier contenant les constantes pour la BDD et les chemins du site.
-  require("../config/index.php");
 
   // Connexion à la BDD
   $dsn = "mysql:host=" . DB_HOSTNAME . ";dbname=" . DB_DATABASE;

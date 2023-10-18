@@ -17,7 +17,6 @@ class LoginView
       $this->controller->validatePassword();
 
       if (empty($this->controller->errors)) {
-        session_start();
         $users = $this->controller->getUser();
         $_SESSION["user"]["firstname"] = $users["firstname"];
         $_SESSION["user"]["lastname"] = $users["lastname"];

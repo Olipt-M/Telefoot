@@ -5,5 +5,5 @@ RewriteRule ^subscription$ index.php?page=subscription
 RewriteRule ^login$ index.php?page=login
 RewriteRule ^reset_password$ index.php?page=reset_password
 RewriteRule ^user$ index.php?page=user
-RewriteRule ^logout$ index.php?page=logout
+RewriteRule ^logout$ ./logout.php
 # RewriteRule ^new_password$ index.php?page=new_password

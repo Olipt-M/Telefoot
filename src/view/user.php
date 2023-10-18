@@ -12,7 +12,6 @@ class UserView
 
   public function render()
   {
-    session_start();
     // Check if user is connected and avoid session hijacking
     if (!isset($_SESSION["user"]) || ($_SESSION["user"]["ip"] != $_SERVER["REMOTE_ADDR"])) {
       header('Location: home');
