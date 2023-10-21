@@ -13,17 +13,8 @@ class LoginView
   public function render()
   {
     if (!empty($_POST)) {
-      $this->controller->validateEmail();
-      $this->controller->validatePassword();
-
-      if (empty($this->controller->errors)) {
-        $users = $this->controller->getUser();
-        $_SESSION["user"]["firstname"] = $users["firstname"];
-        $_SESSION["user"]["lastname"] = $users["lastname"];
-        $_SESSION["user"]["ip"] = $_SERVER["REMOTE_ADDR"];
-
+      if ($this->controller->validateLogin()) {
         header('Location: user');
-
       } else {
         $errors = $this->controller->getErrors();
       }

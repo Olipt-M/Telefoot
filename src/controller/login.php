@@ -46,4 +46,21 @@ class LoginController
       $this->errors["password"] = "Le mot de passe est erroné.";
     }
   }
+
+  public function validateLogin() : bool
+  {
+    $this->validateEmail();
+    $this->validatePassword();
+
+    if (empty($this->errors)) {
+      $users = $this->getUser();
+      $_SESSION["user"]["firstname"] = $users["firstname"];
+      $_SESSION["user"]["lastname"] = $users["lastname"];
+      $_SESSION["user"]["ip"] = $_SERVER["REMOTE_ADDR"];
+
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

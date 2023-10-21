@@ -1,4 +1,6 @@
 <?php
+  define("HOST", "http://localhost/telefoot/public/");
+
   define("DB_HOSTNAME", "localhost");
   define("DB_USERNAME", "root");
   define("DB_PASSWORD", "root");

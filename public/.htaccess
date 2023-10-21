@@ -6,4 +6,5 @@ RewriteRule ^login$ index.php?page=login
 RewriteRule ^reset_password$ index.php?page=reset_password
 RewriteRule ^user$ index.php?page=user
 RewriteRule ^logout$ ./logout.php
-# RewriteRule ^new_password$ index.php?page=new_password
+# RewriteRule ^new_password/([a-z0-9]+)$ index.php?page=new_password&token=$1
+# index.php?page=new_password&token={$this->getToken()}
